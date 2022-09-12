@@ -54,7 +54,7 @@ namespace PruebaTecnicaPichincha.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(int? id)
+        public  IActionResult Delete(int? id)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace PruebaTecnicaPichincha.Controllers
                     return NotFound();
                 }
 
-                await _cuentasRepository.EliminarMovimiento(id.Value);
+                _cuentasRepository.EliminarMovimiento(id.Value);
                 return Ok();
             }
             catch (Exception e)
